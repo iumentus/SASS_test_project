@@ -1,0 +1,77 @@
+.footer {
+    margin-top: 2.5rem;
+    background-color: $color-grey;
+    &__content {
+        padding: 2rem 2rem;
+    }
+
+    &__text {
+        width: 85%;
+        display: inline-block;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        color: $color-medium-grey;
+        margin-bottom: 0 !important;
+
+        @include respond(phone) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__logo {
+        width: 15%;
+        display: inline-block;
+        text-align: right;
+        @include default_font;
+        font-size: 3.1rem;
+        a {
+            text-decoration: none;
+            color: $color-white;
+        } 
+
+        @include respond(phone) {
+            display: block;
+            text-align: center;
+            margin: 2rem auto 0 auto;
+            width: 50%;
+        }
+    }
+
+    &__navigation {
+        margin-bottom: 3rem;
+
+        @include respond(phone) {
+            width: 100%;
+            text-align: center;
+        }
+
+        &-item {
+            list-style: none;
+            @include default_font;
+            font-size: 1.2rem;
+            display: inline-block;
+            line-height: 2rem;
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+                padding-right: 1rem;
+                border-right: 1px solid $color-white;
+            }
+
+            a {
+                &:link,
+                &:visited {
+                    text-decoration: none;
+                    color: $color-white;
+                    transition: color .2s;
+                }
+
+                &:hover {
+                    color: $color-pink-light;
+                }
+                
+            }
+        }
+    }
+}

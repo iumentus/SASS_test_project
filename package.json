@@ -1,0 +1,14 @@
+{
+  "name": "devbridge",
+  "version": "1.0.0",
+  "description": "Test project",
+  "main": "index.js",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "scripts": {
+    "compile:sass": "node-sass scss/main.scss css/style.css -w"
+  },
+  "author": "Laurynas Zilinskas",
+  "license": "ISC"
+}

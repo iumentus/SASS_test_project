@@ -1,0 +1,23 @@
+h2 {
+    font-size: $h2-text-size;
+    @include primary_font;
+}
+
+h3 {
+    font-size: $h3-text-size;
+    @include primary_font;
+
+    &:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+p {
+    font-size: $default-text-size;
+    @include default_font;
+    line-height: 2rem;
+
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}

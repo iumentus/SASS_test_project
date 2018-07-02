@@ -1,0 +1,92 @@
+.main {
+    &__side {
+        &-form {
+            margin: 2rem 0 2rem 2rem;
+            padding: 2rem 2rem;
+            border: 2px solid $color-grey;
+
+            @include respond(phone) {
+                margin: 2rem 0;
+            }
+
+            @include respond(tab-port) {
+                margin: 2rem 0;
+            }
+    
+            &--label {
+                display: block;
+                @include default_font;
+                font-size: 1.4rem;
+                margin-bottom: .5rem;
+                
+            }
+    
+            &--input {
+                @include default_font;
+                display: block;
+                width: 100%;
+                font-size: 1.4rem;
+                padding: .5rem 0 .5rem 1rem;
+            }
+    
+            &-submit {
+                display: block;
+                width: 11rem;
+                height: 3.6rem;
+                background-color: $color-pink;
+                color: $color-white;
+                @include default_font;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: .3rem;
+                border: none;
+                cursor: pointer;
+                transition: all .2s;
+                -moz-transition: all .2s;
+    
+                &:hover {
+                    background-color: $color-dark-grey;
+                    box-shadow: 0 .5rem 1rem rgba($color-black, .3);
+                    transform: scale(1.04);
+                    -moz-transform: scale(1.04);
+                }
+    
+                &:active,
+                &:focus {
+                    transform: translateY(-1px) scale(1.01);
+                    -moz-transform: translateY(-1px) scale(1.01);
+                    box-shadow: 0 .3rem .8rem rgba($color-black, .1);
+                }
+    
+       
+            }
+    
+            &-group {
+                &:not(:first-child) {
+                    margin: 2rem 0;
+                }
+            }
+    
+            &--textarea {
+                height: 13rem;
+            }
+       }
+    }
+}
+
+#emptyError,
+#shortError,
+#longError {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: $color-pink;
+    display: none;
+}
+
+#typeError {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: $color-pink;
+    display: none;
+}

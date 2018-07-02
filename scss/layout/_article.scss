@@ -1,0 +1,76 @@
+.main {
+    margin-top: 4rem ;
+    position: relative;
+    z-index: 0;
+    display: block;
+    width: 100%;
+
+    &__article {
+        padding: 2rem 2rem;
+        background-color: $color-white;
+        
+        &-small {
+            padding: 2rem 2rem;
+            background-color: $color-white;
+            max-height: 180px;
+            margin-top: 2rem;
+
+            &--2 {
+                @include respond(phone) {
+                    margin-top: 0;
+                }
+
+                @include respond(tab-port) {
+                    margin-top: 0;
+                }
+            }
+
+        }
+
+        &-link {
+            &:link,
+            &:visited {
+                text-decoration: none;
+                font-size: $default-text-size;
+                color: $color-text-blue;
+                @include default_font;
+                display: block;
+                margin: .5rem 0;
+            } 
+        }
+
+        &--line {
+            display: block;
+            width: 100%;
+            height: 0.2rem;
+            background-color: $color-light-grey;
+        }
+
+        &--line-2 {
+            display: block;
+            width: 100%;
+            height: 0.4rem;
+            background-color: $color-black;
+        }
+    }
+
+    &__side {
+       &-text {
+           padding-left: 2rem;
+
+           @include respond(phone) {
+            padding-left: 0;
+        }
+
+        @include respond(tab-port) {
+            padding-left: 0;
+        }
+       }
+    }
+
+    &__bottom {
+            padding: 2rem 2rem;
+            background-color: $color-medium-grey;
+            width: 100%;
+    }
+}

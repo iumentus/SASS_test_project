@@ -1,0 +1,23 @@
+@mixin clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@mixin default_font {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+@mixin primary_font {
+    font-family: 'Times New Roman', serif;
+}
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 48em) {@content}; //768px
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) and (min-width: 48em) {@content}; //900px
+    }
+}

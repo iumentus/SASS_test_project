@@ -1,0 +1,165 @@
+.mobile {
+    display: none;
+    height: 11.7rem;
+
+    @include respond(phone) {
+        display: block;
+    }
+
+    @include respond(tab-port) {
+        display: block;
+    }
+
+    &__main-menu {
+        background-color: $color-dark-grey;
+        position: absolute;
+        top: 10.6rem;
+        z-index: 999;
+
+        @include respond(phone) {
+            top: 9rem;
+        }
+       
+        @include respond(tab-port) {
+            top: 9.2rem;
+        }
+
+
+        opacity: 0;
+        visibility: hidden;
+        
+        transition: all .3s;
+
+        &-dropdown {
+            padding-top: 1rem;
+            &-content {
+                margin-left: 3rem;
+
+                opacity: 0;
+                visibility: hidden;
+                transform: translateX(-50rem);
+                height: 0;
+                transition: all .3s ease;
+            }
+
+            &--link {
+                color: $color-grey;
+            }  
+            
+            &:hover &-content {
+                transform: translateX(0);
+                height: 100%;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        li, a {
+            @include default_font;
+            color: $color-white;
+            text-decoration: none;
+            list-style: none;
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.6rem;
+
+            &:hover {
+                color: $color-medium-grey;
+            }
+        }
+    }
+
+    &__sec-menu {
+        padding-bottom: 1rem;
+        
+        li, a {color: grey}
+    }
+    
+    &__checkbox {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__button {
+        background-color: transparent;
+        height: 4rem;
+        width: 4rem;
+        position: absolute;
+        left: calc(100% - 8rem);
+        z-index: 1000;
+        cursor: pointer;
+        text-align: center;
+
+        @include respond(phone) {
+            top: 7rem;
+        }
+
+        @include respond(tab-port) {
+            top: 7rem;
+        }
+    }
+
+    // ICON
+    &__icon {
+        & {
+            position: absolute;
+        }
+
+        &,
+        &::before,
+        &::after {
+            width: 4rem;
+            height: 2px;
+            background-color: $color-white;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+            -webkit-transition: all .2s;
+            -moz-transition: all .2s;
+            -ms-transition: all .2s;
+            -o-transition: all .2s;
+        }
+
+        &::before {top: -14px;}
+        &::after {top: 14px;}
+    }
+
+    &__button:hover &__icon::before {
+        top: -18px;
+    }
+
+    &__button:hover &__icon::after {
+        top: 18px;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+    }
+
+    &__checkbox:checked ~ &__main-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+}

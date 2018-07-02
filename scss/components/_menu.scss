@@ -1,0 +1,119 @@
+.header {
+    &__nav {
+        @include respond(phone) {
+            display: none;
+        }
+
+        @include respond(tab-port) {
+            display: none;
+        }
+        
+        &--main { 
+            position: absolute;
+            top: 9.7rem;;
+            right: 2rem;
+            transform: translateY(-80%);
+            -ms-transform: translateY(-80%);
+            -moz-transform: translateY(-80%);
+            -o-transform: translateY(-80%);
+            li {
+                    display: inline-block;
+                    &:not(:last-child) {
+                    padding-right: 2.4rem;
+                    
+                }
+                a { 
+                    &:link,
+                    &:visited {
+                        text-decoration: none;
+                        @include default_font;
+                        color: $color-white;
+                        font-size: 2rem;
+                        transition: color .2s ease;
+                    }
+                    &:hover {
+                        color: $color-medium-grey;
+                    }       
+                }
+            }
+        }
+
+        &-dropdown {
+           position: relative;
+
+            &-content {
+                position: absolute;
+                background-color: $color-dark-grey;
+                width: 15rem;
+                left: -25%;
+                transition: all .3s;
+                -moz-transition: all .3s;
+                -ms-transition: all .3s;
+                -o-transition: all .3s;
+                z-index: 5000;
+
+                opacity: 0;
+                visibility: hidden;
+
+                -webkit-clip-path: polygon(50% 0%, 60% 11%, 100% 11%, 100% 100%, 0 100%, 0 11%, 40% 11%);
+                -o-clip-path: polygon(50% 0%, 60% 11%, 100% 11%, 100% 100%, 0 100%, 0 11%, 40% 11%);
+                clip-path: polygon(50% 0%, 60% 11%, 100% 11%, 100% 100%, 0 100%, 0 11%, 40% 11%);
+
+                &-container {
+                    
+                    padding-top: 1.6rem;
+                }
+
+                &--link {
+                    &:link,
+                    &:active {
+                        @include default_font;
+                        font-size: 1.2rem !important;
+                        display: block;
+                        padding: .55rem 1rem;
+                    }
+              
+                    &:hover {
+                        background-color: $color-grey;
+                        color: $color-white !important;
+                    }
+                }
+                
+            }
+
+            &:hover &-content {
+                opacity: 1;
+                visibility: visible;
+            }
+
+        }
+
+        &--sec {
+            position: absolute;
+            top: 27px;
+            right: 2rem;
+            li {
+                display: inline-block;
+                &:not(:last-child) {
+                    padding-right: 1.4rem;
+                }
+                a {
+                    &:link,
+                    &:visited {
+                        text-decoration: none;
+                        vertical-align: top;  
+                        color: $color-black;
+                        @include default_font;
+                        font-size: $default-text-size;
+                        transition: color .2s ease;
+                    }
+
+                    &:hover {
+                        color: $color-white;
+                    }
+                    
+                }
+            }
+        }
+}
+}
